@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Royale</title>
+    <meta name="viewport" content="width=device-width" >
+    <meta http-equiv="Cache-Control" content="no-cache">
+
+    <link rel="stylesheet" href="News.WebUI/css/5grid/core.css">
+    <link rel="stylesheet" href="News.WebUI/css/5grid/core-desktop.css">
+    <link rel="stylesheet" href="News.WebUI/css/5grid/core-1200px.css">
+    <link rel="stylesheet" href="News.WebUI/css/5grid/core-noscript.css">
+    <link rel="stylesheet" href="News.WebUI/css/style.css">
+    <!--[if IE 9]><link rel="stylesheet" href="css/style-ie9.css"><![endif]-->
+</head>
+<body>
+
+    <script src="@Url.Content("~/css/5grid/jquery.js")"></script>
+    <script src="@Url.Content("~/css/5grid/init.js?use=mobile,desktop,1000px&amp;mobileUI=1&amp;mobileUI.theme=none")"></script>
+    <div id="header-wrapper">
+        <header id="header" class="5grid-layout">
+            <div class="row">
+                <div class="12u">
+                    <!-- Logo -->
+                    <h1><a href="index.html" class="mobileUI-site-name">Новини</a></h1>
+                    <p style="margin-left:35px">Всі новини України</p>
+                    <!-- Nav -->
+                    <nav class="mobileUI-site-nav"> <a href="index" class="active">Головне</a> <a href="politic">Політика</a> <a href="#">Наука</a> <a href="#">АТО</a> <a href="#">Бізнес</a> <a href="#">останні новини</a></nav>
+                </div>
+            </div>
+        </header>
+    </div>
+    @RenderBody()
+    <script language="JavaScript1.2">
+        var ns6=document.getElementById&&!document.all?1:0
+        var head="display:''"
+        var folder=''
+        function expandit(curobj){
+        folder=ns6?curobj.nextSibling.nextSibling.style:document.all[curobj.sourceIndex+1].style
+        if (folder.display=="none")
+        folder.display=""
+        else
+        folder.display="none"
+        }
+
+    </script>
+</body>
+</html>

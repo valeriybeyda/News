@@ -1,0 +1,82 @@
+﻿@using News.Entity;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    List<NewsEntity> ne = ViewBag.Tasks;
+    int count = 1;
+}
+    <div id="wrapper">
+        <div class="5grid-layout">
+            <div id="feature-content">
+                <section>
+                    <h2>Головне в Україні</h2>
+                </section>
+
+                @*<div class="row">
+                    <div class="12u">
+                        <div class="row">
+                            @for (var i = 1; i <= ne.Count; i++ , count ++)
+                            {
+
+                                <div class="3u container">
+                                    
+                                    <section>
+                                        <div>
+                                            <div class="image-style1"><a href="#"><img src="images/pics06.jpg" alt=""></a></div>
+                                            <div><a href="#"><img src="css/images/img02.png" width="262" height="30" alt=""></a></div>
+                                        </div>
+                                        <div class="box">
+                                            <p>@ne[count-1].Title</p>
+                                            <p class="button"><a href="#">Детальніше</a></p>
+                                        </div>
+                                    </section>
+                                    @if (count%4 == 0)
+                                    {
+                                        <br/>
+                                        <br/>
+                                    }  
+                                    
+                                </div>
+                            }
+                        </div>
+
+                    </div>
+                </div>*@
+            </div>
+            <div id="page">
+                <div class="row">
+                    <div class="12u">
+                        <section id="content">
+                                @foreach (var n in ne)
+                                {
+                                    <h2>@n.Title</h2>
+                                    <p class="subtitle">@n.Title</p>
+
+                                    <p>
+                                    <p style="cursor:pointer" onclick="expandit(this)">Показати детальну інформацію</p>
+                                    <span style="display:none" @*style=&{head};*@ class="newstext">
+                                        @*<div class="alignleft">
+                        <div class="image-style1"><a href="#"><img src="images/1712713.jpg" alt=""></a></div>
+                        <div><a href="#"><img src="css/images/img02.png" width="262" height="30" alt=""></a></div>
+                    </div>*@
+
+                                        @n.Txt
+
+                                    </span>
+                                    </p>
+                                    <hr />
+                                }
+                        </section>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <div class="5grid-layout">
+        <div id="copyright">
+            <section>
+                <p>&copy; Your Site Name | Images: <a target="_blank" href="http://fotogrph.com/">Fotogrph</a> | Design: <a target="_blank" href="http://html5templates.com/">HTML5Templates.com</a></p>
+            </section>
+        </div>
+    </div>
