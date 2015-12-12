@@ -8,6 +8,7 @@ namespace News.Entity
 {
     public class NewsEntity
     {
+
         public int Id { get; set; }
         public string Title { get; set; }
         public string Txt { get; set; }

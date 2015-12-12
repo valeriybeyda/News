@@ -5,17 +5,21 @@ using System.Web;
 using System.Web.Mvc;
 using News.Entity;
 using News.Repositories;
+using System.Configuration;
+using System.Data.SqlClient;
+
 namespace News.WebUI.Controllers
-{
+{   [NoCache]
     public class NewsController : Controller
     {
 
-        private FakeNewsRepository _newsRepository;
+        private SqlNewsRepository _newsRepository;
         // GET: News
 
         public NewsController()
         {
-            this._newsRepository = new FakeNewsRepository();
+            SqlConnection Conn = new SqlConnection(ConfigurationManager.ConnectionStrings["_cnString"].ConnectionString);
+            this._newsRepository = new SqlNewsRepository(Conn.ConnectionString);
         }
         [HttpGet]
         public ActionResult Index()
